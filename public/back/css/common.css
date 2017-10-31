@@ -19,6 +19,11 @@ ul {
   text-align: center;
 }
 
+.lt_main .table td,th {
+  text-align: center;
+  vertical-align: middle;
+}
+
 /*首页*/
 .lt_aside {
   width: 180px;
