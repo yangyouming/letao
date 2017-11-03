@@ -1,0 +1,45 @@
+
+.lt_content .item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.lt_content .now_price{
+  color: red;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.lt_content .old_price{
+  color: #666;
+  font-size: 14px;
+  margin-left: 5px;
+  text-decoration: line-through;
+}
+
+.lt_content .size span{
+  padding: 5px;
+  background-color: #eee;
+  border: 1px solid #666;
+  font-size: 12px;
+}
+
+.lt_content .num span{
+  font-size:12px;
+}
+
+
+.lt_footer {
+  padding: 0 10px;
+  font-size: 14px;
+  background-color: #eee;
+}
+
+.lt_footer a {
+  height: 55px;
+  line-height: 55px;
+}
+.lt_footer p a {
+  padding: 10px;
+  font-size: 14px;
+}
