@@ -22,12 +22,19 @@
   background-color: #eee;
   border: 1px solid #666;
   font-size: 12px;
+  height: 30px;
+  line-height: 30px;
 }
 
-.lt_content .num span{
-  font-size:12px;
+.lt_content .size span.now{
+  background-color: #069;
+  color: #fff;
 }
 
+.lt_content .num span {
+  font-size: 12px;
+
+}
 
 .lt_footer {
   padding: 0 10px;
@@ -39,6 +46,7 @@
   height: 55px;
   line-height: 55px;
 }
+
 .lt_footer p a {
   padding: 10px;
   font-size: 14px;

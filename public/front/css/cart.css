@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.cart_left {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.cart_left img {
+  width: 60px;
+}
+
+.cart_right {
+  width: 100%;
+  padding-left: 70px;
+}
+
+.cart_right strong {
+  height: 42px;
+}
+
+.cart_right p {
+  color: #666;
+}
+.cart_right .now_price {
+  color: red;
+  font-size: 16px;
+}
+.cart_right .old_price {
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+.ck {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}

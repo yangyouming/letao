@@ -17,6 +17,11 @@ var tools={
   //获取对象中对应的属性的值
   getParam:function (key) {
     return this.getParamObj()[key];
+  },
+  checkLogin:function (data) {
+      if(data.error===400){
+        location.href="login.html?returnUrl=" + location.href;
+      }
   }
 }
 
