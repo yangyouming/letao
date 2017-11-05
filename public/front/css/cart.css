@@ -12,6 +12,7 @@
 .cart_right {
   width: 100%;
   padding-left: 70px;
+  display: block;
 }
 
 .cart_right strong {
@@ -36,4 +37,64 @@
   position: absolute;
   bottom: 0;
   left: 20px;
+}
+
+.mui-table-cell {
+  display: block;
+}
+
+.lt_total {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #ccc;
+  position: fixed;
+  bottom: 55px;
+  z-index: 999;
+}
+
+.lt_total span{
+  color:red;
+  font-size: 12px;
+}
+.lt_total a {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  background-color: red;
+  color: #fff;
+  padding: 0 15px;
+
+}
+
+.lt_container {
+  padding-bottom: 85px;
+}
+
+
+.lt_edit_size {
+  text-align: left;
+}
+
+.lt_edit_size span{
+  padding: 5px;
+  background-color: #eee;
+  border: 1px solid #666;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.lt_edit_size span.now{
+  background-color: #069;
+  color: #fff;
+}
+
+.lt_edit_num span {
+  font-size: 12px;
+
+}
+.lt_edit_num {
+  text-align: left;
 }

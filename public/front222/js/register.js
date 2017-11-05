@@ -1,51 +1,58 @@
 /**
- * Created by 杨友明 on 2017/11/5.
+ * Created by HUCC on 2017/11/4.
  */
 $(function () {
 
-  //短信验证功能
-  $(".btn_getCode").on("click",function () {
+  //短信验证功能（目的：获取验证码， 通过返回的结果）
+  $(".btn_getcode").on("click", function () {
 
-    //点击后需要把按钮改成 正在发送中... 并禁用
-    var $this=$(this);
-    if($this.hasClass("disabled")) {
+
+
+    //只要点击按钮，先把按钮的值改成 正在发送中...
+    //需要把按钮的样式改成灰色，禁用了这个按钮
+    var $this = $(this);
+    //先判断有没有disabled类，如果有，不玩了。
+    if($this.hasClass("disabled")){
       return false;
-    };
+    }
 
-    $this.addClass("disabled").html("正在发送中...");
 
-    //发生ajax请求
+    $this.addClass("disabled").html("正在发送中....");
     $.ajax({
-      type:"get",
-      url:"/user/vCode",
-      success:function (data) {
-        // console.log(data);
-        console.log(data.vCode);  //打印验证码
-        var num=60;
-        var timer= setInterval(function () {
-            num--;
-          $this.html(num+"秒后再次发送");
-          
-          if(num<=0){
-            clearInterval(timer);
+      type: "get",
+      url: "/user/vCode",
+      success: function (data) {
+        //成功了说明后台发送了验证码，需要让用户60秒后才能再次点击
+        console.log(data.vCode);//相当于手机收到了验证码
+        var num = 60;
+        var timer = setInterval(function () {
+          num--;
+          $this.html(num + "秒后再次发送");
+
+          if (num <= 0) {
             $this.html("再次发送").removeClass("disabled");
+            //清定时器
+            clearInterval(timer);
           }
-        },1000);
+        }, 1000);
+
       }
     });
+  })
 
-  });
 
   //手机注册功能
-  $(".btn_register").on("click",function () {
-      //获取数据
+  $(".btn_register").on("click", function () {
+
+    //获取所有的数据
     var username = $("[name='username']").val();
     var password = $("[name='password']").val();
     var repassword = $("[name='repassword']").val();
     var mobile = $("[name='mobile']").val();
     var vCode = $("[name='vCode']").val();
-    
-    //表单验证
+
+
+    //表单校验
     if(!username){
       mui.toast("请输入用户名");
       return false;
@@ -85,6 +92,8 @@ $(function () {
       return false;
     }
 
+
+    //发送ajax请求
     $.ajax({
       type:"post",
       url:"/user/register",
@@ -95,19 +104,18 @@ $(function () {
         vCode:vCode
       },
       success:function (data) {
-        // console.log(data);
         if(data.success){
-          //登录成功,跳转到登录页
+          mui.toast("注册成功，即将跳转到登录页");
           setTimeout(function () {
-              location.href="login.html";
-          },600);
+            location.href = "login.html";
+          },1000);
         }else {
           mui.toast(data.message);
         }
+
       }
-    });
+    })
 
   });
-
 
 });

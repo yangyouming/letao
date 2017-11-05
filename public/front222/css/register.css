@@ -1,26 +1,24 @@
-.form{
+.form {
   padding: 10px;
 }
 
-.lt_content .mui-input-row input{
-  border: 1px solid #ccc;
-}
 .form .code input {
   width: 60%;
 }
-.code .btn_getCode {
+
+.form .code a {
   width: 35%;
-  float: right;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 17px;
 }
 
-.form .btn_register{
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  display: block;
-  padding: 0;
+.form .code .disabled {
+  background-color: #999;
+  border-color: #999;
 }
+
 .form .btn_register {
   padding: 0;
   height: 40px;
